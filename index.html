@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BondoWOWso Smart City Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="logo">
+          <i class="fas fa-car-side"></i>
+        </div>
+        <nav class="menu">
+          <a href="#" class="menu-item active"
+            ><i class="fas fa-tachometer-alt"></i
+          ></a>
+          <a href="#" class="menu-item"><i class="fas fa-chart-pie"></i></a>
+          <a href="#" class="menu-item"><i class="fas fa-users"></i></a>
+          <a href="#" class="menu-item"><i class="fas fa-calendar-alt"></i></a>
+          <a href="#" class="menu-item"><i class="fas fa-parking"></i></a>
+          <a href="#" class="menu-item"><i class="fas fa-cog"></i></a>
+        </nav>
+        <div class="profile">
+          <img src="https://i.pravatar.cc/150?img=3" alt="User Profile" />
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="header">
+          <h1>BondoWOWso Smart City</h1>
+          <div class="date-picker">
+            <input type="date" value="2021-10-06" />
+            <input type="date" value="2021-10-10" />
+          </div>
+          <button class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </header>
+
+        <section class="summary-cards">
+          <div class="card">
+            <div class="card-icon blue"><i class="fas fa-car"></i></div>
+            <div class="card-info">
+              <h2>178+</h2>
+              <p>Cars/Month</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-icon yellow"><i class="fas fa-wallet"></i></div>
+            <div class="card-info">
+              <h2>20+</h2>
+              <p>Total Income/Month</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-icon orange">
+              <i class="fas fa-piggy-bank"></i>
+            </div>
+            <div class="card-info">
+              <h2>190+</h2>
+              <p>Total Income/Year</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-icon purple"><i class="fas fa-users"></i></div>
+            <div class="card-info">
+              <h2>12+</h2>
+              <p>Total Member</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-area">
+          <div class="main-chart-container">
+            <div class="reports-section">
+              <h3>Reports</h3>
+              <div class="chart-container">
+                <canvas id="reportsChart"></canvas>
+              </div>
+            </div>
+
+            <div class="recent-cars">
+              <h3>Recent Cars</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Tracking no</th>
+                    <th>Parking Location</th>
+                    <th>Price</th>
+                    <th>Enter Time</th>
+                    <th>Out Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>P 1234 AL</td>
+                    <td><i class="fas fa-car"></i> P1</td>
+                    <td>Rp. 5000</td>
+                    <td>21:00</td>
+                    <td>22:00</td>
+                  </tr>
+                  <tr>
+                    <td>P 2323 AL</td>
+                    <td><i class="fas fa-car"></i> P2</td>
+                    <td>Rp. 5000</td>
+                    <td>22:00</td>
+                    <td>23:00</td>
+                  </tr>
+                  <tr>
+                    <td>P 2424 AL</td>
+                    <td><i class="fas fa-car"></i> P5</td>
+                    <td>Rp. 5000</td>
+                    <td>23:00</td>
+                    <td>00:00</td>
+                  </tr>
+                  <tr>
+                    <td>P 2525 AL</td>
+                    <td><i class="fas fa-car"></i> P6</td>
+                    <td>Rp. 5000</td>
+                    <td>00:00</td>
+                    <td class="on-process">On Process</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="side-info-container">
+            <div class="park-performance">
+              <h3>Park Performance</h3>
+              <div class="chart-container">
+                <canvas id="performanceChart"></canvas>
+              </div>
+            </div>
+
+            <div class="parking-spot-left">
+              <h3>Current Parking Spot Left</h3>
+              <div class="spots-grid">
+                <div class="spot">
+                  <p>P1</p>
+                  <i class="fas fa-car"></i>
+                </div>
+                <div class="spot">
+                  <p>P2</p>
+                  <i class="fas fa-car"></i>
+                </div>
+                <div class="spot available">
+                  <p>P3</p>
+                  <i class="fas fa-car"></i>
+                </div>
+                <div class="spot available">
+                  <p>P4</p>
+                  <i class="fas fa-car"></i>
+                </div>
+                <div class="spot">
+                  <p>P5</p>
+                  <i class="fas fa-car"></i>
+                </div>
+                <div class="spot">
+                  <p>P6</p>
+                  <i class="fas fa-car"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
